@@ -76,9 +76,6 @@ First, need asset ID of the release. Send a request to:
 ```sh
 set TAG=v1.0.0
 curl -L "https://api.github.com/repos/jtendeck/GDUploader/releases/tags/%TAG%"
-
-# Or get release for all tags:
-# curl -L -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/jtendeck/GoogleDriveUploader/releases
 ```
 
 Find the asset ID for the tag to download. This can be found in `[n].assets[n].id`... or use the assets URL.
