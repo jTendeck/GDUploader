@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleDriveTest", "GoogleDriveTest\GoogleDriveTest.csproj", "{15C0D26E-1B80-4911-A49E-35A714C02BB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97E589E3-5129-464E-BA51-15B15DD51653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E589E3-5129-464E-BA51-15B15DD51653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E589E3-5129-464E-BA51-15B15DD51653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E589E3-5129-464E-BA51-15B15DD51653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C0D26E-1B80-4911-A49E-35A714C02BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C0D26E-1B80-4911-A49E-35A714C02BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C0D26E-1B80-4911-A49E-35A714C02BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C0D26E-1B80-4911-A49E-35A714C02BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE3D7E35-3949-4524-9FB6-8FEF640AF13E}
+	EndGlobalSection
+EndGlobal
