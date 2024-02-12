@@ -71,20 +71,14 @@ git push origin v<tag-name>
 
 ## Commands to Download Release
 
-Set up:
-
-```sh
-set GH_TOKEN=
-```
-
 First, need asset ID of the release. Send a request to:
 
 ```sh
-set TAG=v1.0.4
-curl -L -H "Authorization: token %GH_TOKEN%" "https://api.github.com/repos/jtendeck/GoogleDriveUploader/releases/tags/%TAG%"
+set TAG=v1.0.0
+curl -L "https://api.github.com/repos/jtendeck/GDUploader/releases/tags/%TAG%"
 
 # Or get release for all tags:
-# curl -L -H "Accept: application/vnd.github+json" -H "Authorization: token %GH_TOKEN%" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/jtendeck/GoogleDriveUploader/releases
+# curl -L -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/jtendeck/GoogleDriveUploader/releases
 ```
 
 Find the asset ID for the tag to download. This can be found in `[n].assets[n].id`... or use the assets URL.
@@ -92,8 +86,8 @@ Find the asset ID for the tag to download. This can be found in `[n].assets[n].i
 Then download using:
 
 ```sh
-set ASSET_ID=150585990
+set ASSET_ID=151185595
 set OUTPUT_FILE=GoogleDriveTest.zip
 
-curl -H "Authorization: token %GH_TOKEN%" -H "Accept: application/octet-stream" -L https://api.github.com/repos/jtendeck/GoogleDriveUploader/releases/assets/%ASSET_ID% -o %OUTPUT_FILE%
+curl -H "Accept: application/octet-stream" -L https://api.github.com/repos/jtendeck/GDUploader/releases/assets/%ASSET_ID% -o %OUTPUT_FILE%
 ```
