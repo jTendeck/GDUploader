@@ -14,7 +14,7 @@ namespace GoogleDriveTest
         {
             string localRootDir = $@"{Directory.GetCurrentDirectory()}\..\..\";
             
-            string[] validKeys = { "clientId", "clientSecret", "user", "appName", "refreshTok", "pathToFile", "inputFileName", "googleDriveDestFolder" };
+            string[] validKeys = { "clientId", "clientSecret", "user", "appName", "refreshTok", "pathToFile", "inputFileName", "googleDriveDestFolder", "permissions" };
             
             Dictionary<string, string> inputParams = new Dictionary<string, string>();
             
@@ -77,7 +77,15 @@ namespace GoogleDriveTest
             string gdFolder = inputParams.ContainsKey("googleDriveDestFolder") ? inputParams["googleDriveDestFolder"] : null;
             string fileName = inputParams["inputFileName"];
 
+            gd.DeleteAllFiles(gd.GetFiles(fileName));
             gd.UpsertFile(filePath, fileName, gdFolder);
+
+            foreach (string userPerm in inputParams["permissions"].Split(','))
+            {
+                string[] u = userPerm.Split(':');
+                gd.CreatePermission(gd.GetFileId(fileName), u[1], u[2], u[0]);
+            }
+            
 
             // string fileName = "cardData.xlsx";
             //gd.DeleteAllFiles(gd.GetFiles(fileName));

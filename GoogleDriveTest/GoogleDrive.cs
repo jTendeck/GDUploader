@@ -5,10 +5,12 @@ using Google.Apis.Auth.OAuth2;
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Drive.v3;
+using Google.Apis.Drive.v3.Data;
 using Google.Apis.Services;
 using Google.Apis.Upload;
 using Google.Apis.Util.Store;
 using static Google.Apis.Drive.v3.DriveService;
+using File = System.IO.File;
 
 
 namespace GoogleDriveTest
@@ -274,6 +276,17 @@ namespace GoogleDriveTest
                 deletedIds.Add(DeleteFile(f.Id));
             }
             return deletedIds;
+        }
+
+        public void CreatePermission(string fileName, string email, string role, string type="user")
+        {
+            Permission p = new Permission()
+            {
+                Role = role,
+                Type = type,
+                EmailAddress = email
+            };
+            _ds.Permissions.Create(p, fileName).Execute();
         }
     }
 }

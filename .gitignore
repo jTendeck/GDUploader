@@ -1,6 +1,7 @@
 secrets.json
 .vs
 GoogleDriveTest\bin
+*.xlsx
 
 *.swp
 *.*~
