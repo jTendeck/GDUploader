@@ -88,3 +88,4 @@ set OUTPUT_FILE=GoogleDriveTest.zip
 
 curl -H "Accept: application/octet-stream" -L https://api.github.com/repos/jtendeck/GDUploader/releases/assets/%ASSET_ID% -o %OUTPUT_FILE%
 ```
+
