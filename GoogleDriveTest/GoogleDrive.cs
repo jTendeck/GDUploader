@@ -278,7 +278,7 @@ namespace GoogleDriveTest
             return deletedIds;
         }
 
-        public void CreatePermission(string fileName, string email, string role, string type="user")
+        public void CreatePermission(string fileId, string email, string role, string type="user", bool sendNotificationEmail = false)
         {
             Permission p = new Permission()
             {
@@ -286,7 +286,9 @@ namespace GoogleDriveTest
                 Type = type,
                 EmailAddress = email
             };
-            _ds.Permissions.Create(p, fileName).Execute();
+            PermissionsResource.CreateRequest cr = _ds.Permissions.Create(p, fileId);
+            cr.SendNotificationEmail = sendNotificationEmail;
+            cr.Execute();
         }
     }
 }
